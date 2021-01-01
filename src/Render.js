@@ -8,7 +8,7 @@ const Render = (props) => {
       <button>Click1</button>
       <button>Click2</button>
       <p>test</p>
-      <span>@React</span>
+      <span data-testid="copyright">@React</span>
     </div>
   );
 };
