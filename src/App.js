@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
 import "./App.css";
 import RenderInput from "./RenderInput";
-import { FrameworkList } from "./FrameworkList";
+import FrameworkList from "./FrameworkList";
 
 const data = [
   {
