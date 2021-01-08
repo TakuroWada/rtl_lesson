@@ -14,7 +14,7 @@ export const fetchDummy = createAsyncThunk("fetch/dummy", async (num) => {
 
 //APIにアクセス
 export const fetchJSON = createAsyncThunk("fetch/api", async () => {
-  const res = await axios.get("https://jsonplaceholder.typicode.com/user/1");
+  const res = await axios.get("https://jsonplaceholder.typicode.com/users/1");
   const { username } = res.data;
   return username;
 });
@@ -74,6 +74,10 @@ export const customCounterSlice = createSlice({
     //fetchJSONのfetch成功時
     builder.addCase(fetchJSON.fulfilled, (state, action) => {
       state.username = action.payload;
+    });
+    //fetchJSONのfetch失敗時
+    builder.addCase(fetchJSON.rejected, (state, action) => {
+      state.username = "anonymous";
     });
   },
 });
