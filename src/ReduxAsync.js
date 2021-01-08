@@ -3,16 +3,21 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   selectCount,
   fetchDummy,
+  selectUsername,
+  fetchJSON,
 } from "../src/features/customCounter/customCounterSlice";
 
 const ReduxAsync = () => {
   const count = useSelector(selectCount);
+  const username = useSelector(selectUsername);
   const dispatch = useDispatch();
 
   return (
     <div>
       <span data-testid="count-value">{count}</span>
       <button onClick={() => dispatch(fetchDummy(5))}>FetchDummy</button>
+      {username && <h3>{username}</h3>}
+      <button onClick={() => dispatch(fetchJSON())}>FetchJSON</button>
     </div>
   );
 };
